@@ -1,0 +1,106 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.choice {
+  display: block;
+  position: relative;
+  cursor: pointer;
+
+  padding: 0;
+  overflow: hidden;
+
+  font-size: 1rem;
+
+  color: var(--color-light);
+  background-color: transparent;
+  border: none;
+  border-radius: 0.25rem;
+
+
+  img {
+    transition: filter 0.25s;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+
+    padding: 0.625rem 1.5rem;
+
+    background-color: var(--color-ground);
+    border-radius: 0.25rem;
+  }
+
+  &:hover img {
+    filter: brightness(80%);
+  }
+}
+
+.intro {
+  display: block;
+  position: relative;
+}
+
+.title {
+  display: block;
+  position: relative;
+
+  margin: 0 0 0.5rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+
+  @media screen and (max-width: 767px) {
+    font-size: 1.875rem;
+  }
+}
+
+.lead {
+  display: block;
+  margin: 0 0 1rem;
+  font-size: 1.375rem;
+  line-height: 1.5;
+  font-weight: 400;
+
+  @media screen and (max-width: 767px) {
+    font-size: 1.25rem;
+  }
+}
+
+.image {
+  display: block;
+
+  margin: 1.5rem 0 1.5rem;
+  padding: 0;
+  overflow: hidden;
+
+  border-radius: 0.25rem;
+}
+
+.description {
+  display: block;
+  font-size: 1rem;
+}
+
+.manage {
+  display: block;
+  margin-top: 1.5rem;
+}
+
+.team {
+  cursor: pointer;
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0;
+
+  font-size: 0.875rem;
+
+  color: var(--color-ground);
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px;
+}

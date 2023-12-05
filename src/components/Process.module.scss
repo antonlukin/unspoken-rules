@@ -1,0 +1,39 @@
+.process {
+  display: block;
+  width: 100%;
+}
+
+.image {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+
+.text {
+  display: block;
+
+  h4 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+}
+
+.help {
+  display: block;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+.manage {
+  display: block;
+  margin-top: 2rem;
+}
