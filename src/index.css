@@ -15,11 +15,6 @@
 body {
   display: block;
 
-  width: 100%;
-  max-width: 42rem;
-  margin: 0 auto;
-  padding: 2rem;
-
   font-family: 'Raleway', sans-serif;
   line-height: 1.5;
   font-size: 16px;
@@ -27,6 +22,17 @@ body {
 
   color: var(--color-dark);
   background-color: var(--color-light);
+}
+
+#root {
+  display: flex;
+
+  width: 100%;
+  max-width: 42rem;
+  min-height: 36rem;
+  margin: 0 auto;
+
+  padding: 2rem;
 }
 
 button {

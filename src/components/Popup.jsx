@@ -1,4 +1,5 @@
 import styles from './Popup.module.scss'
+import mixins from './Mixins.module.scss'
 
 function Popup({children, setExtended}) {
   return (
@@ -7,9 +8,11 @@ function Popup({children, setExtended}) {
         {children}
       </div>
 
-      <button type='button' className={styles.close} onClick={() => {setExtended(false)}}>
-        Закрыть
-      </button>
+      <div className={styles.close}>
+        <button type='button' className={mixins.button} onClick={() => {setExtended(false)}}>
+          Закрыть
+        </button>
+      </div>
     </div>
   )
 }

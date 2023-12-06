@@ -27,11 +27,11 @@ function Welcome({setHero}) {
           </div>
 
           <div className={styles.manage}>
-            <button className={mixins.button + ' ' + mixins.primary} onClick={() => setStarted(true)}>
+            <button type='button' className={mixins.button + ' ' + mixins.primary} onClick={() => setStarted(true)}>
               Начать игру
             </button>
 
-            <button className={styles.team} onClick={() => setExtended(true)}>Команда проекта</button>
+            <button type='button' className={styles.team} onClick={() => setExtended(true)}>Команда проекта</button>
           </div>
         </>
       }
@@ -67,53 +67,55 @@ function Welcome({setHero}) {
         <Popup setExtended={setExtended}>
           <h2>Над игрой работали</h2>
 
-          <ul>
-            <li>
-              <strong>Сценарии и тексты:</strong>
-              <span>Женя Иванова — сценарий Татьяны</span>
-              <span>Арина Бойко — сценарий Ани</span>
-              <span>Настя Толстопятова — сценарий Карины</span>
-              <span>Наташа Подлыжняк — сценарий Светланы</span>
-            </li>
+          <figure>
+            <ul>
+              <li>
+                <strong>Сценарии и тексты:</strong>
+                <span>Женя Иванова — сценарий Татьяны</span>
+                <span>Арина Бойко — сценарий Ани</span>
+                <span>Настя Толстопятова — сценарий Карины</span>
+                <span>Наташа Подлыжняк — сценарий Светланы</span>
+              </li>
 
-            <li>
-              <strong>Редактура:</strong>
-              <span>Катя Кудрявцева</span>
-            </li>
+              <li>
+                <strong>Редактура:</strong>
+                <span>Катя Кудрявцева</span>
+              </li>
 
-            <li>
-              <strong>Иллюстрации:</strong>
-              <span>Вика Денисова</span>
-              <span>Соня Буславская</span>
-              <span>Тая Краюхина</span>
-            </li>
-          </ul>
+              <li>
+                <strong>Иллюстрации:</strong>
+                <span>Вика Денисова</span>
+                <span>Соня Буславская</span>
+                <span>Тая Краюхина</span>
+              </li>
+            </ul>
 
-          <ul>
-            <li>
-              <strong>Экспертиза:</strong>
-              <span>Ирина Изотова</span>
-              <span>Татьяна Дроздова</span>
-              <span>Евгения Волункова</span>
-            </li>
+            <ul>
+              <li>
+                <strong>Экспертиза:</strong>
+                <span>Ирина Изотова</span>
+                <span>Татьяна Дроздова</span>
+                <span>Евгения Волункова</span>
+              </li>
 
-            <li>
-              <strong>Консультации:</strong>
-              <span>Юлия Счастливцева</span>
-              <span>Ирина Изотова</span>
-            </li>
+              <li>
+                <strong>Консультации:</strong>
+                <span>Юлия Счастливцева</span>
+                <span>Ирина Изотова</span>
+              </li>
 
-            <li>
-              <strong>Продюссирование, верстка, дизайн:</strong>
-              <span>Тая Краюхина</span>
-            </li>
+              <li>
+                <strong>Продюссирование, верстка, дизайн:</strong>
+                <span>Тая Краюхина</span>
+              </li>
 
-            <li>
-              <strong>Идея:</strong>
-              <span>Точенов Андрей</span>
-              <span>Тая Краюхина</span>
-            </li>
-          </ul>
+              <li>
+                <strong>Идея:</strong>
+                <span>Точенов Андрей</span>
+                <span>Тая Краюхина</span>
+              </li>
+            </ul>
+          </figure>
         </Popup>
       }
     </div>

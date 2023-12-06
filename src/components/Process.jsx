@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import Result from './Result'
 import styles from './Process.module.scss'
@@ -6,8 +6,29 @@ import mixins from './Mixins.module.scss'
 
 function Process({storage, setHero}) {
   const [step, setStep] = useState(storage.start)
+  const [visible, setVisible] = useState(true)
+  const [poster, setPoster] = useState(null)
+
+  useEffect(() => {
+    setVisible(true)
+  }, [step])
+
+  useEffect(() => {
+    setPoster(null)
+
+    if (step.image) {
+      const image = new Image()
+      image.setAttribute('src', step.image)
+
+      image.addEventListener('load', () => {
+        setPoster(image)
+      });
+    }
+  }, [step])
 
   const changeStep = (action) => {
+    setVisible(false)
+
     if (action === 'welcome') {
       return setHero(null)
     }
@@ -25,11 +46,17 @@ function Process({storage, setHero}) {
     return classes.join(' ')
   }
 
+  const classes = [styles.process]
+
+  if (visible) {
+    classes.push(styles.visible)
+  }
+
   return (
-    <div className={styles.process}>
-      {step.image &&
+    <div className={classes.join(' ')}>
+      {poster &&
         <figure className={styles.image}>
-          <img src={step.image} alt="" />
+          <img src={poster.src} alt="" />
         </figure>
       }
 
@@ -56,7 +83,7 @@ function Process({storage, setHero}) {
       }
 
       {step.final &&
-        <Result final={step.final} setHero={setHero} />
+        <Result final={storage[step.final]} setHero={setHero} />
       }
     </div>
   )

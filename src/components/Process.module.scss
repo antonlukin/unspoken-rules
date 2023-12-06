@@ -1,6 +1,7 @@
 .process {
   display: block;
   width: 100%;
+  opacity: 0;
 }
 
 .image {
@@ -36,4 +37,18 @@
 .manage {
   display: block;
   margin-top: 2rem;
+}
+
+.visible {
+  animation: fade-in 0.375s 0.125s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
