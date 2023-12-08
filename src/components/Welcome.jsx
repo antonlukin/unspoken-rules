@@ -9,6 +9,18 @@ function Welcome({setHero}) {
   const [started, setStarted] = useState(false)
   const [extended, setExtended] = useState(false)
 
+  const closePopup = () => {
+    setExtended(false)
+
+    document.body.style.overflow = null
+  }
+
+  const openPopup = () => {
+    setExtended(true)
+
+    document.body.style.overflow = 'hidden'
+  }
+
   return (
     <div className={styles.intro}>
       { ! started &&
@@ -31,14 +43,13 @@ function Welcome({setHero}) {
               Начать игру
             </button>
 
-            <button type='button' className={styles.team} onClick={() => setExtended(true)}>Команда проекта</button>
+            <button type='button' className={styles.team} onClick={openPopup}>Команда проекта</button>
           </div>
         </>
       }
 
       { started &&
         <>
-          <h1 className={styles.title}>Выберите героиню</h1>
           <div className={styles.grid}>
             <button type='button' className={styles.choice} onClick={() => { setHero('tatiana') }}>
               <img src="https://glasnaya.media/wp-content/uploads/2022/04/1-tatyana.jpg" alt="Татьяна" />
@@ -64,7 +75,7 @@ function Welcome({setHero}) {
       }
 
       { extended &&
-        <Popup setExtended={setExtended}>
+        <Popup closePopup={closePopup}>
           <h2>Над игрой работали</h2>
 
           <figure>
