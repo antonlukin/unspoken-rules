@@ -11,6 +11,8 @@ function Process({storage, setHero}) {
 
   useEffect(() => {
     setVisible(true)
+
+    window.parent.scrollTo({top: 0})
   }, [step])
 
   useEffect(() => {

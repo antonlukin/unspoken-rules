@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import styles from './Welcome.module.scss'
 import mixins from './Mixins.module.scss'
@@ -8,6 +8,10 @@ import Popup from './Popup'
 function Welcome({setHero}) {
   const [started, setStarted] = useState(false)
   const [extended, setExtended] = useState(false)
+
+  useEffect(() => {
+    window.parent.scrollTo({top: 0})
+  }, [started])
 
   const closePopup = () => {
     setExtended(false)
